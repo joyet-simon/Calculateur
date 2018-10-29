@@ -32,25 +32,25 @@
             android:text="€" />
 
         <RadioButton
-            android:id="@+id/rd"
+            android:id="@+id/rdDollars"
             style="@style/radio"
             android:onClick="convDollars"
             android:text="$"
-            tools:ignore="DuplicateIds" />
+            />
 
         <RadioButton
-            android:id="@+id/rd"
+            android:id="@+id/rdLivres"
             style="@style/radio"
             android:onClick="convLivres"
             android:text="£"
-            tools:ignore="DuplicateIds" />
+          />
 
         <RadioButton
-            android:id="@+id/rd"
+            android:id="@+id/rdBitcoins"
             style="@style/radio"
             android:onClick="convBitcoins"
             android:text="B"
-            tools:ignore="DuplicateIds" />
+           />
     </RadioGroup>
 
 

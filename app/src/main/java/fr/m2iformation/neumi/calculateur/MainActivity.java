@@ -11,7 +11,7 @@ import android.widget.TextView;
 import net.sourceforge.jeval.EvaluationException;
 import net.sourceforge.jeval.Evaluator;
 
-public class MainActivity extends AppCompatActivity implements View.OnLongClickListener {
+public class MainActivity extends AppCompatActivity {
 
     TextView tvResult;
     double tauxEuros = 1;
@@ -21,7 +21,9 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
     int selectionMonnaie = 0;
     int selectionConv = 0;
     Evaluator evaluator = new Evaluator();
-    RadioButton rd;
+    RadioButton rdDollars;
+    RadioButton rdLivres;
+    RadioButton rdBitcoins;
     SharedPreferences.Editor editor;
 
 
@@ -31,8 +33,43 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         setContentView(R.layout.activity_main);
         tvResult = findViewById(R.id.tvResult);
         tvResult.setText("0");
-        rd = findViewById(R.id.rd);
-        rd.setOnLongClickListener(this);
+
+        rdDollars = findViewById(R.id.rdDollars);
+        rdDollars.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                tauxDollars = Double.parseDouble(tvResult.getText().toString());
+                editor.putFloat("tauxDollars", (float) tauxDollars);
+                tvResult.setText("1");
+                editor.apply();
+                return true;
+            }
+        });
+
+        rdLivres = findViewById(R.id.rdLivres);
+        rdLivres.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                tauxLivres = Double.parseDouble(tvResult.getText().toString());
+                editor.putFloat("tauxLivres", (float) tauxLivres);
+                tvResult.setText("1");
+                editor.apply();
+                return true;
+            }
+        });
+
+        rdBitcoins = findViewById(R.id.rdBitcoins);
+        rdBitcoins.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                tauxBitcoins = Double.parseDouble(tvResult.getText().toString());
+                editor.putFloat("tauxBitcoins", (float) tauxBitcoins);
+                tvResult.setText("1");
+                editor.apply();
+                return true;
+            }
+        });
+
         SharedPreferences pref = getPreferences(MODE_PRIVATE);
         editor = pref.edit();
         tauxDollars = pref.getFloat("tauxDollars", (float) 1.185);
@@ -144,25 +181,4 @@ public class MainActivity extends AppCompatActivity implements View.OnLongClickL
         }
     }
 
-
-    @Override
-    public boolean onLongClick(View v) {
-        RadioButton rd = (RadioButton) v;
-        switch (rd.getText().toString()) {
-            case "$":
-                tauxDollars = Double.parseDouble(tvResult.getText().toString());
-                editor.putFloat("tauxDollars", (float) tauxDollars);
-                break;
-            case "£":
-                tauxLivres = Double.parseDouble(tvResult.getText().toString());
-                editor.putFloat("tauxLivres", (float) tauxLivres);
-                break;
-            case "B":
-                tauxBitcoins = Double.parseDouble(tvResult.getText().toString());
-                editor.putFloat("tauxBitcoins", (float) tauxBitcoins);
-                break;
-        }
-        editor.apply();
-        return true;
-    }
 }
