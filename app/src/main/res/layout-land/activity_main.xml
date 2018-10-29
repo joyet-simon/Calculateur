@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#efeec4">
+
+    <GridLayout
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
+        android:columnCount="4">
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_columnSpan="4"
+            android:background="#000000"
+            android:gravity="right"
+            android:textColor="#ffffff"
+            android:textSize="30sp"
+            android:layout_margin="5dp"/>
+
+        <Button
+            android:id="@+id/btClear"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/touche"
+            android:onClick="clear"
+            android:text="@string/effacer"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btDiv"
+            style="@style/operation"
+            android:layout_column="3"
+            android:text="/" />
+
+        <Button
+            android:id="@+id/btSept"
+            style="@style/boutton"
+            android:layout_marginLeft="5dp"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btHuit"
+            style="@style/boutton"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btNeuf"
+            style="@style/boutton"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btMulti"
+            style="@style/operation"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/btQuatre"
+            style="@style/boutton"
+            android:layout_marginLeft="5dp"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btCinq"
+            style="@style/boutton"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btSix"
+            style="@style/boutton"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btSous"
+            style="@style/operation"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/btUn"
+            style="@style/boutton"
+            android:layout_marginLeft="5dp"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btDeux"
+            style="@style/boutton"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btTrois"
+            style="@style/boutton"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btAddi"
+            style="@style/operation"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/btZero"
+            style="@style/boutton"
+            android:layout_marginLeft="5dp"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btPoint"
+            style="@style/boutton"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btResult"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:background="@drawable/operation"
+            android:onClick="result"
+            android:text="@string/resultat"
+            android:textSize="25sp" />
+
+    </GridLayout>
+
+    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="4"
+        tools:context=".MainActivity">
+
+        <RadioGroup
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rdEuro"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rdEuro"
+                style="@style/radio"
+                android:onClick="convEuros"
+                android:text="€" />
+
+            <RadioButton
+                android:id="@+id/rd"
+                style="@style/radio"
+                android:onClick="convDollars"
+                android:text="$"
+                tools:ignore="DuplicateIds" />
+
+            <RadioButton
+                android:id="@+id/rd"
+                style="@style/radio"
+                android:onClick="convLivres"
+                android:text="£"
+                tools:ignore="DuplicateIds" />
+
+            <RadioButton
+                android:id="@+id/rd"
+                style="@style/radio"
+                android:onClick="convBitcoins"
+                android:text="B"
+                tools:ignore="DuplicateIds" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/rdDeg"
+            android:orientation="vertical">
+
+
+            <RadioButton
+                android:id="@+id/rdDeg"
+                style="@style/radio"
+                android:onClick="convDeg"
+                android:text="deg" />
+
+            <RadioButton
+                android:id="@+id/rdRad"
+                style="@style/radio"
+                android:onClick="convRad"
+                android:text="rad" />
+
+            <RadioButton
+                android:id="@+id/rdGrd"
+                style="@style/radio"
+                android:onClick="convGrd"
+                android:text="grd" />
+
+        </RadioGroup>
+
+
+
+    </GridLayout>
+</LinearLayout>
