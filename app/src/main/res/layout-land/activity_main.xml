@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="#efeec4">
+    android:background="#efeec4"
+    android:orientation="horizontal">
 
     <GridLayout
         android:layout_width="400dp"
@@ -15,11 +15,11 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_columnSpan="4"
+            android:layout_margin="5dp"
             android:background="#000000"
             android:gravity="right"
             android:textColor="#ffffff"
-            android:textSize="30sp"
-            android:layout_margin="5dp"/>
+            android:textSize="30sp" />
 
         <Button
             android:id="@+id/btClear"
@@ -192,7 +192,6 @@
                 android:text="grd" />
 
         </RadioGroup>
-
 
 
     </GridLayout>

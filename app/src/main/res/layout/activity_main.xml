@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#efeec4"
     android:columnCount="4"
-    tools:context=".MainActivity"
-    android:background="#efeec4">
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tvResult"
@@ -29,8 +29,7 @@
             android:id="@+id/rdEuro"
             style="@style/radio"
             android:onClick="convEuros"
-            android:text="€"
-            />
+            android:text="€" />
 
         <RadioButton
             android:id="@+id/rd"
